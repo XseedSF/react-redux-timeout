@@ -17,14 +17,15 @@ class LoginComponent extends Component {
   }
   handleLogin = () => {
     if(this.state.name.length > 0) {
-      this.props.login(this.state.name);
+      this.props.doLogin(this.state.name);
     }
     else {
       alert('You need to enter your name');
     }
   }
   handleLogout = () => {
-    this.props.logout();
+    this.setState({ name: ''});
+    this.props.doLogout();
   }
   render() {
     return (
