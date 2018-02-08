@@ -7,8 +7,8 @@ class LoginComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: ''
-    }
+      name: '',
+    };
   }
   handleFormChange(ev) {
     const newState = {};
@@ -16,10 +16,9 @@ class LoginComponent extends Component {
     this.setState(newState);
   }
   handleLogin = () => {
-    if(this.state.name.length > 0) {
+    if (this.state.name.length > 0) {
       this.props.doLogin(this.state.name);
-    }
-    else {
+    } else {
       alert('You need to enter your name');
     }
   }
@@ -27,13 +26,13 @@ class LoginComponent extends Component {
     this.props.dummyAction();
   }
   handleLogout = () => {
-    this.setState({ name: ''});
+    this.setState({ name: '' });
     this.props.doLogout();
   }
   render() {
     return (
       <div>
-        {this.props.loggedUserName ? 
+        {this.props.loggedUserName ?
           <div>
             <p> Welcome {this.props.loggedUserName}</p>
             <button onClick={this.handleLogout}> Logout </button>
@@ -42,11 +41,11 @@ class LoginComponent extends Component {
           </div> :
           <div>
             <div>
-              <input 
-                type="text" 
+              <input
+                type="text"
                 name="name"
-                value={this.state.inputValue} 
-                onChange={e => this.handleFormChange(e)} 
+                value={this.state.inputValue}
+                onChange={e => this.handleFormChange(e)}
               />
             </div>
             <button onClick={this.handleLogin}> Login </button>
@@ -59,7 +58,7 @@ class LoginComponent extends Component {
 
 function mapStateToProps({ auth }) {
   return {
-    loggedUserName: auth.loggedUserName
+    loggedUserName: auth.loggedUserName,
   };
 }
 

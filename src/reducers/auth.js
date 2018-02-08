@@ -2,7 +2,7 @@ import * as types from '../actions/types';
 
 export const initialState = {
   loggedUserName: '',
-  errorMessage: ''
+  errorMessage: '',
 };
 
 export default function repos(state = initialState, action) {
@@ -10,13 +10,13 @@ export default function repos(state = initialState, action) {
     case types.LOGIN_DUMMY:
       return {
         ...state,
-        loggedUserName: action.payload.name
-      }
-    case types.LOGOUT_DUMMY: 
+        loggedUserName: action.payload.name,
+      };
+    case types.LOGOUT_DUMMY:
       return {
         ...state,
-        loggedUserName: ''
-      }
+        loggedUserName: '',
+      };
     default:
       return state;
   }
