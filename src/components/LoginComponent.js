@@ -23,6 +23,9 @@ class LoginComponent extends Component {
       alert('You need to enter your name');
     }
   }
+  handleDubmmyClick = () => {
+    this.props.dummyAction();
+  }
   handleLogout = () => {
     this.setState({ name: ''});
     this.props.doLogout();
@@ -34,6 +37,8 @@ class LoginComponent extends Component {
           <div>
             <p> Welcome {this.props.loggedUserName}</p>
             <button onClick={this.handleLogout}> Logout </button>
+            <br />
+            <button onClick={this.handleDubmmyClick}> Press to send dummy action </button>
           </div> :
           <div>
             <div>

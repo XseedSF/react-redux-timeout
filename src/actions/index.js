@@ -18,15 +18,21 @@ export const doLogout = () => (dispatch, getState) => {
 }
 
 //Action Creators
-export const login = (name) => {
+const login = (name) => {
   return { 
     type: types.LOGIN_DUMMY, 
     payload: { name }
   }
 };
 
-export const logout = () => {
+const logout = () => {
   return { 
     type: types.LOGOUT_DUMMY
   }
+};
+
+export const dummyAction = () => (dispatch) => {
+  dispatch({
+    type: types.DUMMY_ACTION
+  })
 };
